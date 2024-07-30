@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+import { ApiService } from './api.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  constructor(private apiService: ApiService){}
+  title = 'MyTestFirstApp';
+  onClick(){
+	//alert('Button Clicked')
+	this.apiService.getStatusOfCompany().subscribe(
+		data =>{
+			alert('API success');
+		},
+		error =>{
+			alert('API Failed');
+		}
+	);
+	
+  }
+}
