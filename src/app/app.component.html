@@ -1,1 +1,12 @@
-<button (click)="onClick()">Click Me!!</button>
+<div>
+  <button (click)="authenticate()">Authenticate with Xero</button>
+
+  <div *ngIf="vendors.length > 0">
+    <h2>Vendors List</h2>
+    <ul>
+      <li *ngFor="let vendor of vendors">
+        {{ vendor.Name }} (ID: {{ vendor.ContactID }})
+      </li>
+    </ul>
+  </div>
+</div>
