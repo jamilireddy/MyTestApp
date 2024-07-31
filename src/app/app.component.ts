@@ -33,6 +33,7 @@ export class AppComponent {
   authenticate() {
     const authUrl = `${environment.authUrl}?response_type=code&client_id=${environment.clientId}&redirect_uri=${environment.redirectUri}&scope=openid profile email accounting.contacts&state=12345`;
     window.location.href = authUrl;
+    alert('authUrl:'+authUrl);
   }
 
   getAccessToken(authCode: string) {
